@@ -1,0 +1,20 @@
+class FollowersController < ApplicationController
+	def create
+		@user = User.find(params[:user_id])
+		@userc = current_user
+		@follower = @user.followers.create({:user_id => @user.id, :followed => @userc.id, :user_name => @user.name, :follower_name => @userc.name})
+		redirect_to user_path(@user)
+	end
+		
+	def show
+	end
+
+
+	def destroy
+		@user = User.find(params[:user_id])
+		@userc = current_user
+		@follower = @user.followers.where({:user_id => @user.id, :followed => @userc.id})
+		@follower.destroy
+		redirect_to user_path(@user)
+	end
+end

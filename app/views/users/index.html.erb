@@ -1,0 +1,41 @@
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<%= render "layouts/header" %>
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-xs-12 col-md-4">
+			<div id="show_users">
+				<h2>Users</h2>
+				<table class="table table-hover">
+  				<tr>
+    				<th>Name</th>
+    				<th>Email</th>
+  				</tr>
+  				<% @users.each do |user| %>
+    			<tr>
+      			<td><%= link_to (user.name).capitalize, user %></td>
+      			<td><%= user.email %></td>
+    			</tr>
+  				<% end %>
+				</table>
+				<br />
+				<br />
+				<h3>Total Tweet Count: <%= @size %></h3>
+				<br />
+			</div>
+		</div>
+		<div class="col-xs-12 col-md-5">
+			<div id="display_tweets">
+  			<%= render partial: "displayindex", locals: {follower_tweets: @follower_tweets, tweets: @tweets} %>
+			</div>
+			<script>
+				$(document).ready(function() {
+    			$('.pagination a').attr('data-remote', 'true');
+				});
+			</script>
+		</div>
+		<div class="col-xs-12 col-md-3">
+		</div>
+	</div>
+</div>
+

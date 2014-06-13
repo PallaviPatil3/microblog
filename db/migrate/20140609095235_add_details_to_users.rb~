@@ -1,0 +1,5 @@
+class AddDetailsToUsers < ActiveRecord::Migration
+  def change
+    add_column :users, :followers_num, :integer
+  end
+end

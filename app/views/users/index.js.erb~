@@ -1,0 +1,2 @@
+$('#display_tweets').html('<%=escape_javascript render :partial => "displayindex", locals: {tweets: @tweets, follower_tweets: @follower_tweets}  %>');
+$('.pagination a').attr('data-remote', 'true');

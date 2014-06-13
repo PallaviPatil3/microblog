@@ -1,0 +1,8 @@
+<%= @user.name %>,
+===============================================
+ 
+You have successfully changed your account details.
+Your username is: <%= @user.name %>.
+To sign in, use your email, <%= @user.email %> and your new password.
+ 
+Have a great day!

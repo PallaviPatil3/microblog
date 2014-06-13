@@ -1,0 +1,5 @@
+<p><%= tweet.body></p>
+
+<%= link_to 'Delete tweet', [tweet.user, tweet],
+               method: :delete,
+               data: { confirm: 'Are you sure?' } %>

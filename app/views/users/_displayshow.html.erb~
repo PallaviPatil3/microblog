@@ -1,0 +1,7 @@
+<h2 class="text-center">Tweets:</h2>
+  <table class="table" id="tweet_table">
+  <% if follower_tweets.size > 8 %>
+    <%= will_paginate tweets %>
+  <% end %>
+<%= render partial: "tweet", collection: @tweets, locals: {user: user} %> 
+</table>

@@ -1,0 +1,56 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "bootstrap";
+
+#navigate {
+	padding: 10px;
+	float: right;
+	border: 2px solid grey;
+	width: 150px;
+	height: 100%;
+	border-radius: 5px;
+	margin-top: 10px;
+}
+
+#all_tweets {
+	height: 100%;
+	width: 100%;
+	border: 2px solid grey;
+	display: inline-block;
+	position: static;
+	padding: 10px;
+	margin-top: 10px;
+	border-radius: 5px;
+}
+
+#about_user {
+	float: left;
+	margin-left: 10px;
+}
+
+#display_tweets {
+	height: 100%;
+	width: 100%;
+	display: inline-block;
+	border: 2px solid grey;
+	padding: 10px;
+	position: static;
+	margin-top: 10px;
+	border-radius: 5px;
+}
+
+#show_users {
+	float: left;
+	margin-left: 20px;
+}
+
+#about_followers {
+	width: 100%;
+}
+
+#n_tweet {
+	width: 150px;
+}
+
+	

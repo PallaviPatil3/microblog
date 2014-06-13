@@ -1,0 +1,6 @@
+$('#tweet_table').prepend('<%= j render("users/tweet", {tweet:  @tweet, user: @user}) %>');
+
+$('#new_tweet')[0].reset();
+
+
+

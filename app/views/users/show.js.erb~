@@ -1,0 +1,5 @@
+$(document).ready(function() {
+    $('.pagination a').attr('data-remote', 'true');
+});
+$('#all_tweets').html('<%=escape_javascript render :partial => "displayshow", locals: {tweets: @tweets, user: @user, follower_tweets: @follower_tweets}  %>');
+$('.pagination a').attr('data-remote', 'true');

@@ -1,0 +1,20 @@
+<div id="navigate">
+<ul class="list-unstyled text-right">
+<% if user_signed_in? %>
+  <li><%= link_to 'Edit account', edit_user_registration_path %></li>
+  <br />
+  <li><%= link_to 'Sign out', destroy_user_session_path, :method=>'delete' %></li>
+  <br />
+<% else %>
+  <li><%= link_to 'Sign in', new_user_session_path %></li>
+  <br />
+  <li><%= link_to 'Sign up', new_user_registration_path %></li>
+  <br />
+<% end %>
+<% if user_signed_in? %>
+  <li><%= link_to 'Users', users_path %></li>
+  <br />
+  <li><%= link_to 'Home Page', user_path(current_user) %></li>
+<% end %>
+</ul>
+</div>

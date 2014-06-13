@@ -1,0 +1,22 @@
+<div id="n_tweet">
+<h3>New Tweet:</h3>
+<%= form_for([@user, @user.tweets.build], remote: true) do |f| %>
+<% if @tweet.errors.any? %>
+  <div id="error_explanation">
+    <h2>An error prohibited this article from being saved:</h2>
+    <ul>
+    <% @tweet.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
+  <div class="form-group">
+    <%= f.text_area :body, rows: "5" %>
+  </div>
+
+  <p><div id="submit_button">
+    <%= f.submit 'Create', class: "btn btn-primary" %>
+  </div></p>
+<% end %> 
+</div>

@@ -1,0 +1,19 @@
+<% user.followers.each do |follower| %>
+      <% if (tweet.user_id == follower.id) %>
+       <tr><td col width="70%"><p><strong><%= link_to (follower.name).capitalize, follower %></strong></p>
+<p><%= tweet.body %></p>
+<small><%= distance_of_time_in_words tweet.created_at, Time.now %> ago</small>
+</td>
+      <% end %>
+    <% end %>
+    <% if (tweet.user_id == user.id) %>  
+      <tr><td col width="70%"><p><strong><%= link_to (user.name).capitalize, user %></strong></p>
+<p><%= tweet.body %></p>
+<small><%= distance_of_time_in_words tweet.created_at, Time.now %> ago</small>
+</td>
+<% if user == current_user %>
+  <td col width="30%"><%= link_to 'Delete tweet', [tweet.user, tweet],
+                   method: :delete,
+                   data: { confirm: 'Are you sure?' } %></p></td></tr>
+      <% end %>
+<% end %>

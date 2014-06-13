@@ -1,0 +1,21 @@
+<h2>Tweets:</h2>
+  <table class="table">
+  <% if follower_tweets.size > 8 %>
+    <%= will_paginate @tweets %>
+  <% end %>
+  <% tweets.each do |tweet| %>
+    <% user.followers.each do |follower| %>
+      <% if (tweet.user_id == follower.id) %>
+       <tr><td><%= render partial: "tweet", locals: {tweet: tweet, user: follower} %></td></tr>
+      <% end %>
+    <% end %>
+    <% if (tweet.user_id == user.id) %>  
+      <tr><td><%= render partial: "tweet", locals: {tweet: tweet, user: user} %></td>
+      <% if user == current_user %>
+      <td><%= link_to 'Delete tweet', [tweet.user, tweet],
+                     method: :delete,
+                     data: { confirm: 'Are you sure?' } %></p></td></tr>
+      <% end %>
+    <% end %>
+  <% end %>
+</table>

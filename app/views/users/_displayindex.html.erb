@@ -1,0 +1,14 @@
+<h2 class="text-center">Recent Tweets:</h2>
+  <table class="table">
+	<col width="70%">
+  <col width="30%">
+  <% if follower_tweets.size > 8 %>
+    <%= will_paginate tweets %>
+  <% end %>
+	<% tweets.each do |tweet| %>
+		 <tr><td col width="70%"><p><strong><%= link_to (tweet.user.name).capitalize, tweet.user %></strong></p>
+<p><%= tweet.body %></p>
+<small><%= distance_of_time_in_words tweet.created_at, Time.now %> ago</small>
+</td>
+	<% end %>
+</table>
