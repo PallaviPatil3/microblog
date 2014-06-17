@@ -49,3 +49,7 @@ gem 'rails_12factor', group: :production
 
 gem 'unicorn'
 
+group :development do
+  gem 'capistrano', "~> 2.14.2"
+end
+

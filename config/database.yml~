@@ -8,23 +8,23 @@ default: &default
   adapter: mysql2
   encoding: utf8
   pool: 5
-  username: root
-  password: amura123
+  username: deploy #root
+  password: secret #amura123
   socket: /var/run/mysqld/mysqld.sock
 
 development:
   <<: *default
-  database: my_database_development
+  database: microblog_development
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: my_database_test
+  database: microblog_test
 
 production:
   <<: *default
-  database: my_database_production
-  username: microblog
-  password: <%= ENV['BLOG_DATABASE_PASSWORD'] %>
+  database: microblog_production
+  username: deploy #microblog
+  password: secret #<%= ENV['MICROBLOG_DATABASE_PASSWORD'] %>

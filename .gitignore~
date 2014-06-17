@@ -18,3 +18,7 @@
 database.yml
 
 .secret
+.env
+.env
+
+/config/deploy.rb
