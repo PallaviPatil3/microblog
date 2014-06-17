@@ -13,9 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20140609095235) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
   create_table "followers", id: false, force: true do |t|
     t.integer "user_id"
     t.integer "follower_user_id"

@@ -5,9 +5,12 @@
 #   gem 'sqlite3'
 #
 default: &default
-  adapter: postgresql
+  adapter: mysql2
+  encoding: utf8
   pool: 5
-  timeout: 5000
+  username: root
+  password: amura123
+  socket: /var/run/mysqld/mysqld.sock
 
 development:
   <<: *default
@@ -23,3 +26,5 @@ test:
 production:
   <<: *default
   database: my_database_production
+  username: microblog
+  password: <%= ENV['BLOG_DATABASE_PASSWORD'] %>
