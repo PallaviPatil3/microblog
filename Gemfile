@@ -45,9 +45,7 @@ gem 'bootstrap-sass', '~> 3.1.1'
 
 gem 'will_paginate', '~> 3.0'
 
-gem 'rails_12factor', group: :production
-
-gem 'unicorn'
+# gem 'rails_12factor', group: :production
 
 group :development do
   gem 'capistrano', "~> 2.14.2"

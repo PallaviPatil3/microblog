@@ -8,8 +8,8 @@ default: &default
   adapter: mysql2
   encoding: utf8
   pool: 5
-  username: deploy #root
-  password: secret #amura123
+  username: root
+  password: 
   socket: /var/run/mysqld/mysqld.sock
 
 development:
@@ -26,5 +26,5 @@ test:
 production:
   <<: *default
   database: microblog_production
-  username: deploy #microblog
-  password: secret #<%= ENV['MICROBLOG_DATABASE_PASSWORD'] %>
+  username: microblog
+  password: <%= ENV['MICROBLOG_DATABASE_PASSWORD'] %>
