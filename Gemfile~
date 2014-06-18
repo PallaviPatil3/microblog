@@ -36,11 +36,11 @@ gem 'spring',        group: :development
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-gem 'capistrano', '~> 3.0', require: false, group: :development
-group :development do
-  gem 'capistrano-rails',   '~> 1.1', require: false
-  gem 'capistrano-bundler', '~> 1.1', require: false
-end
+# gem 'capistrano', '~> 3.0', require: false, group: :development
+# group :development do
+#  gem 'capistrano-rails',   '~> 1.1', require: false
+#  gem 'capistrano-bundler', '~> 1.1', require: false
+# end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
@@ -53,7 +53,7 @@ gem 'will_paginate', '~> 3.0'
 
 # gem 'rails_12factor', group: :production
 
-# group :development do
-#   gem 'capistrano', "~> 2.14.2"
-# end
+group :development do
+   gem 'capistrano', "2.15.5"
+end
 
